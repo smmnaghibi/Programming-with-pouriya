@@ -7,14 +7,15 @@ from time import sleep
 import signal
 import os
 
-
+flag = True
 log_level = logging.INFO
 if "--debug" in argv:
     log_level = logging.DEBUG
+    flag = False
 logging.getLogger().setLevel(log_level)
 
-flag = True
 def level(sig, frame):
+    print()
     global flag, log_level
     if flag and log_level != logging.DEBUG:
         log_level = logging.DEBUG
@@ -23,7 +24,6 @@ def level(sig, frame):
         log_level = logging.INFO
         logging.getLogger().setLevel(log_level)
     flag = not flag
-
 
 
 def read_config(filename, mandatory_key_list, cfg):
@@ -53,5 +53,4 @@ while True:
         exit(1)
     cfg = result
     logging.info("Your name is " + cfg['first-name'] + ' ' + cfg['middle-name'] + ' ' + cfg['last-name'])
-
     sleep(10)
