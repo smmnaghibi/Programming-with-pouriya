@@ -27,7 +27,10 @@ def level(sig, frame):
 
 
 def read_config(filename, mandatory_key_list, cfg):
-    file = minidom.parse(os.getcwd()+"/src/"+filename)
+    if "src" in os.getcwd():
+        file = minidom.parse(filename)
+    else:
+        file = minidom.parse(os.getcwd()+"/src/"+filename)
     users = file.getElementsByTagName('user')
 
     file_key = []
