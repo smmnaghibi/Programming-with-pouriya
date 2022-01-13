@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <users>
+        <user name="first-name">Payam</user>
+
+        <user name="last-name">Bazargani</user>
+
+        <user name="middle-name">Haye</user>
+    </users>
+</data>
