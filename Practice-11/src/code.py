@@ -27,7 +27,7 @@ def level(sig, frame):
 
 
 def read_config(filename, mandatory_key_list, cfg):
-    if "src" in os.getcwd():
+    if "/Practice-11/src" in os.getcwd():
         file = minidom.parse(filename)
     else:
         file = minidom.parse(os.getcwd()+"/src/"+filename)
